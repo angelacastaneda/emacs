@@ -14,6 +14,11 @@
   (package-refresh-contents)
   (package-install 'gruvbox-theme))
 
+(defvar my-terminal-shell "/usr/bin/zsh")
+(defadvice ansi-term (before force-bash)
+  (interactive (list my-terminal-shell)))
+(ad-activate 'ansi-term)
+
 (use-package which-key
   :ensure t
   :init
