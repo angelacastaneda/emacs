@@ -9,6 +9,11 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(use-package which-key
+  :ensure t
+  :init
+  (which-key-mode))
+
 ;; disable gui defaults
 (tool-bar-mode -1)
 (menu-bar-mode -1)
