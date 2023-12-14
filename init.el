@@ -14,6 +14,26 @@
   (package-refresh-contents)
   (package-install 'gruvbox-theme))
 
+(setq use-package-always-ensure t)
+
+;; add evil mode
+(use-package undo-fu)
+(use-package evil
+  :demand t
+  :bind (("<escape>" . keyboard-escape-quit))
+  :init
+  (setq evil-want-keybinding nil)
+  ;; no vim insert bindings
+  (setq evil-undo-system 'undo-fu)
+  :config
+  (evil-mode 1))
+
+(use-package evil-collection
+  :after evil
+  :config
+  (setq evil-want-integration t)
+  (evil-collection-init))
+
 ;; alias for yes -> y no->n
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -49,7 +69,8 @@
  '(custom-enabled-themes '(gruvbox-dark-hard))
  '(custom-safe-themes
    '("d445c7b530713eac282ecdeea07a8fa59692c83045bf84dd112dd738c7bcad1d" default))
- '(package-selected-packages '(gruvbox-theme which-key use-package bind-key)))
+ '(package-selected-packages
+   '(evil-collection evil undo-fu gruvbox-theme which-key use-package bind-key)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
