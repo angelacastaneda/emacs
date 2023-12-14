@@ -36,6 +36,7 @@
 ;; change more mini vars
 (setq ring-bell-function 'ignore)
 (when window-system (global-hl-line-mode t))
+(when window-system (global-prettify-symbols-mode t))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
