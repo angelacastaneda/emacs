@@ -9,6 +9,11 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+;; require gruvbox-theme
+(unless (package-installed-p 'gruvbox-theme)
+  (package-refresh-contents)
+  (package-install 'gruvbox-theme))
+
 (use-package which-key
   :ensure t
   :init
