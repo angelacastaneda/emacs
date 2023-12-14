@@ -14,6 +14,9 @@
   (package-refresh-contents)
   (package-install 'gruvbox-theme))
 
+;; alias for yes -> y no->n
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 (defvar my-terminal-shell "/usr/bin/zsh")
 (defadvice ansi-term (before force-bash)
   (interactive (list my-terminal-shell)))
