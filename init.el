@@ -34,36 +34,12 @@
   (setq evil-want-integration t)
   (evil-collection-init))
 
-;; alias for yes -> y no->n
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-(defvar my-terminal-shell "/usr/bin/zsh")
-(defadvice ansi-term (before force-bash)
-  (interactive (list my-terminal-shell)))
-(ad-activate 'ansi-term)
-
 (use-package which-key
   :ensure t
   :init
   (which-key-mode))
 
-;; disable gui defaults
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
-(setq inhibit-startup-message t)
-
-;; change more mini vars
-(setq ring-bell-function 'ignore)
-(when window-system (global-hl-line-mode t))
-(when window-system (global-prettify-symbols-mode t))
-
-(setq make-backup-file nil)
-(setq auto-save-default nil)
-
-;; relative line nums
-(setq display-line-numbers-type 'relative)
-(global-display-line-numbers-mode)
+(org-babel-load-file (expand-file-name "~/.config/emacs/config.org"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
