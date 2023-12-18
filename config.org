@@ -1,8 +1,9 @@
-* Config written in org mode
+#+TITLE: Config written in org mode
+#+CREATOR: Ángel Castañeda
 
-** basic configs
+* basic configs
 
-*** unguiing
+** unguiing
 
 #+begin_src emacs-lisp
     (tool-bar-mode -1)
@@ -11,7 +12,7 @@
     (setq inhibit-startup-message t)
 #+end_src
 
-*** subword mode
+** subword mode
 
 camelCaseAcknowledgment
 
@@ -19,14 +20,14 @@ camelCaseAcknowledgment
   (global-subword-mode 1)
 #+end_src
 
-*** no autosaves or backups
+** no autosaves or backups
 
 #+begin_src emacs-lisp
     (setq make-backup-file nil)
     (setq auto-save-default nil)
 #+end_src
 
-*** electric
+** electric
 
 #+begin_src emacs-lisp
   (setq electric-pair-pairs '(
@@ -36,28 +37,27 @@ camelCaseAcknowledgment
   (electric-pair-mode t)
 #+end_src
 
-*** no bell
+** no bell
 
 #+begin_src emacs-lisp
     (setq ring-bell-function 'ignore)
 #+end_src
 
-*** show line and pretty symbols in gui mode
+** show line and pretty symbols in gui mode
 
 #+begin_src emacs-lisp
     (when window-system (global-hl-line-mode t))
     (when window-system (global-prettify-symbols-mode t))
 #+end_src
 
-
-*** relative line nums
+** relative line nums
 
 #+begin_src emacs-lisp
     (setq display-line-numbers-type 'relative)
     (global-display-line-numbers-mode)
 #+end_src
 
-*** which-key
+** which-key
 
 #+begin_src emacs-lisp
     (use-package which-key
@@ -66,7 +66,7 @@ camelCaseAcknowledgment
 	(which-key-mode))
 #+end_src
 
-*** evil mode
+** evil mode
 
 #+begin_src emacs-lisp
   (use-package undo-fu
@@ -83,7 +83,7 @@ camelCaseAcknowledgment
     (evil-mode 1))
 #+end_src
 
-**** evil collections
+*** evil collections
 
 #+begin_src emacs-lisp
   (use-package evil-collection
@@ -94,9 +94,9 @@ camelCaseAcknowledgment
     (evil-collection-init))
 #+end_src
 
-*** ido
+** ido
 
-**** load ido
+*** load ido
 
 #+begin_src emacs-lisp
   (setq ido-enable-flex-matching nil)
@@ -105,7 +105,7 @@ camelCaseAcknowledgment
   (ido-mode 1)
 #+end_src
 
-**** add vertical
+*** add vertical
 
 #+begin_src emacs-lisp
   (use-package ido-vertical-mode
@@ -115,13 +115,13 @@ camelCaseAcknowledgment
   (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 #+end_src
 
-**** set switch-buffer macro
+*** set switch-buffer macro
 
 #+begin_src emacs-lisp
   (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
 #+end_src
 
-*** smex
+** smex
 
 #+begin_src emacs-lisp
   (use-package smex
@@ -131,13 +131,13 @@ camelCaseAcknowledgment
     ("M-x" . smex))
 #+end_src
 
-*** buffer switching
+** buffer switching
 
 #+begin_src emacs-lisp
   (global-set-key (kbd "C-x b") 'ibuffer)
 #+end_src
 
-**** always kill current buffer
+*** always kill current buffer
 
 #+begin_src emacs-lisp
   (defun kill-curr-buff ()
@@ -146,7 +146,7 @@ camelCaseAcknowledgment
   (global-set-key (kbd "C-x k") 'kill-curr-buff)
 #+end_src
 
-*** avy
+** avy
 
 #+begin_src emacs-lisp
   (use-package avy
@@ -155,15 +155,15 @@ camelCaseAcknowledgment
     ("M-s" . avy-goto-char))
 #+end_src
 
-*** y/n instead of yes/no
+** y/n instead of yes/no
 
 #+begin_src emacs-lisp
     (defalias 'yes-or-no-p 'y-or-n-p)
 #+end_src
 
-*** conf edit/reload
+** conf edit/reload
 
-**** edit
+*** edit
 
 #+begin_src emacs-lisp
   (defun conf-edit ()
@@ -172,7 +172,7 @@ camelCaseAcknowledgment
   (global-set-key (kbd "C-c e") 'conf-edit)
 #+end_src
 
-**** reload
+*** reload
 
 #+begin_src emacs-lisp
   (defun conf-reload ()
@@ -181,7 +181,7 @@ camelCaseAcknowledgment
   (global-set-key (kbd "C-c r") 'conf-reload)
 #+end_src
 
-*** rainbow
+** rainbow
 
 for coloring hex codes #005F87
 
@@ -192,9 +192,9 @@ for coloring hex codes #005F87
     (rainbow-mode 1))
 #+end_src
 
-** terminal
+* terminal
 
-*** default zsh
+** default zsh
 
 #+begin_src emacs-lisp
     (defvar my-terminal-shell "/usr/bin/zsh")
@@ -203,9 +203,9 @@ for coloring hex codes #005F87
     (ad-activate 'ansi-term)
 #+end_src
 
-** org stuff
+* org stuff
 
-*** code swallow buffer
+** code swallow buffer
 
 #+begin_src emacs-lisp
   (setq org-src-window-setup 'current-window)
