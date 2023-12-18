@@ -157,6 +157,26 @@ add vertical
     (defalias 'yes-or-no-p 'y-or-n-p)
 #+end_src
 
+*** conf edit/reload
+
+**** edit
+
+#+begin_src emacs-lisp
+  (defun conf-edit ()
+    (interactive)
+    (find-file "~/.config/emacs/config.org"))
+  (global-set-key (kbd "C-c e") 'conf-edit)
+#+end_src
+
+**** reload
+
+#+begin_src emacs-lisp
+  (defun conf-reload ()
+    (interactive)
+    (org-babel-load-file (expand-file-name "~/.config/emacs/config.org")))
+  (global-set-key (kbd "C-c r") 'conf-reload)
+#+end_src
+
 ** terminal
 
 *** default zsh
