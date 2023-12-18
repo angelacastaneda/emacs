@@ -14,11 +14,11 @@
   (package-refresh-contents)
   (package-install 'gruvbox-theme))
 
-(setq use-package-always-ensure t)
-
 ;; add evil mode
-(use-package undo-fu)
+(use-package undo-fu
+  :ensure t)
 (use-package evil
+  :ensure t
   :demand t
   :bind (("<escape>" . keyboard-escape-quit))
   :init
@@ -29,6 +29,7 @@
   (evil-mode 1))
 
 (use-package evil-collection
+  :ensure t
   :after evil
   :config
   (setq evil-want-integration t)
