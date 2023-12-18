@@ -20,6 +20,12 @@ camelCaseAcknowledgment
   (global-subword-mode 1)
 #+end_src
 
+** clock
+
+#+begin_src emacs-lisp
+  (display-time-mode 1)
+#+end_src
+
 ** no autosaves or backups
 
 #+begin_src emacs-lisp
