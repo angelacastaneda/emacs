@@ -14,32 +14,6 @@
   (package-refresh-contents)
   (package-install 'gruvbox-theme))
 
-;; add evil mode
-(use-package undo-fu
-  :ensure t)
-(use-package evil
-  :ensure t
-  :demand t
-  :bind (("<escape>" . keyboard-escape-quit))
-  :init
-  (setq evil-want-keybinding nil)
-  ;; no vim insert bindings
-  (setq evil-undo-system 'undo-fu)
-  :config
-  (evil-mode 1))
-
-(use-package evil-collection
-  :ensure t
-  :after evil
-  :config
-  (setq evil-want-integration t)
-  (evil-collection-init))
-
-(use-package which-key
-  :ensure t
-  :init
-  (which-key-mode))
-
 (org-babel-load-file (expand-file-name "~/.config/emacs/config.org"))
 
 (custom-set-variables

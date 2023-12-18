@@ -40,6 +40,43 @@
     (global-display-line-numbers-mode)
 #+end_src
 
+*** which-key
+
+#+begin_src emacs-lisp
+    (use-package which-key
+	:ensure t
+	:init
+	(which-key-mode))
+#+end_src
+
+*** evil mode
+
+#+begin_src emacs-lisp
+  (use-package undo-fu
+    :ensure t)
+  (use-package evil
+    :ensure t
+    :demand t
+    :bind (("<escape>" . keyboard-escape-quit))
+    :init
+    (setq evil-want-keybinding nil)
+    ;; no vim insert bindings
+    (setq evil-undo-system 'undo-fu)
+    :config
+    (evil-mode 1))
+#+end_src
+
+**** evil collections
+
+#+begin_src emacs-lisp
+  (use-package evil-collection
+    :ensure t
+    :after evil
+    :config
+    (setq evil-want-integration t)
+    (evil-collection-init))
+#+end_src
+
 *** ido
 
 #+begin_src emacs-lisp
