@@ -25,7 +25,7 @@
  '(custom-safe-themes
    '("d445c7b530713eac282ecdeea07a8fa59692c83045bf84dd112dd738c7bcad1d" default))
  '(package-selected-packages
-   '(dashboard rainbow-mode avy ido-vertical-mode smex evil-collection evil undo-fu gruvbox-theme which-key use-package bind-key)))
+   '(diminish dashboard rainbow-mode avy ido-vertical-mode smex evil-collection evil undo-fu gruvbox-theme which-key use-package bind-key)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

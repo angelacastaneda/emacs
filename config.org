@@ -171,6 +171,20 @@ camelCaseAcknowledgment
     ("M-s" . avy-goto-char))
 #+end_src
 
+** diminish mode
+
+hides specified minor modes in status line
+
+#+begin_src emacs-lisp
+  (use-package diminish
+    :ensure t
+    :init
+    (diminish 'rainbow-mode)
+    (diminish 'evil-collection-unimpaired-mode)
+    (diminish 'which-key-mode)
+    (diminish 'subword-mode))
+#+end_src
+
 ** y/n instead of yes/no
 
 #+begin_src emacs-lisp
