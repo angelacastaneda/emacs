@@ -198,3 +198,11 @@ for coloring hex codes #005F87
 	(interactive (list my-terminal-shell)))
     (ad-activate 'ansi-term)
 #+end_src
+
+** org stuff
+
+*** code swallow buffer
+
+#+begin_src emacs-lisp
+  (setq org-src-window-setup 'current-window)
+#+end_src
