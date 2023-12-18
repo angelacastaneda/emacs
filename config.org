@@ -79,6 +79,15 @@ add vertical
   (global-set-key (kbd "C-x b") 'ibuffer)
 #+end_src
 
+*** avy
+
+#+begin_src emacs-lisp
+  (use-package avy
+    :ensure t
+    :bind
+    ("M-s" . avy-goto-char))
+#+end_src
+
 *** y/n instead of yes/no
 
 #+begin_src emacs-lisp
