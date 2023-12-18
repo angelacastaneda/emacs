@@ -235,6 +235,12 @@ hides specified minor modes in status line
 
 * terminal
 
+** magit
+#+begin_src emacs-lisp
+  (use-package magit
+    :ensure t)
+#+end_src
+
 ** default zsh
 
 #+begin_src emacs-lisp
