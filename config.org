@@ -152,6 +152,16 @@ camelCaseAcknowledgment
   (global-set-key (kbd "C-x k") 'kill-curr-buff)
 #+end_src
 
+** dashboard
+
+#+begin_src emacs-lisp
+  (use-package dashboard
+    :ensure t
+    :config
+    (dashboard-setup-startup-hook)
+    (setq dashboard-items '((recents . 10))))
+#+end_src
+
 ** avy
 
 #+begin_src emacs-lisp
