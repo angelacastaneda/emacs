@@ -211,15 +211,26 @@ hides specified minor modes in status line
   (global-set-key (kbd "C-c r") 'conf-reload)
 #+end_src
 
-** rainbow
+** rainbows
 
-for coloring hex codes #005F87
+*** for hex codes
+
+#005F87
 
 #+begin_src emacs-lisp
   (use-package rainbow-mode
     :ensure t
     :init
     (rainbow-mode 1))
+#+end_src
+
+*** for parens
+
+#+begin_src emacs-lisp
+  (use-package rainbow-delimiters
+    :ensure t
+    :init
+    (rainbow-delimiters-mode 1))
 #+end_src
 
 * terminal
