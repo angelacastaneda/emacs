@@ -133,6 +133,15 @@ add vertical
   (global-set-key (kbd "C-x b") 'ibuffer)
 #+end_src
 
+**** always kill current buffer
+
+#+begin_src emacs-lisp
+  (defun kill-curr-buff ()
+    (interactive)
+    (kill-buffer (current-buffer)))
+  (global-set-key (kbd "C-x k") 'kill-curr-buff)
+#+end_src
+
 *** avy
 
 #+begin_src emacs-lisp
