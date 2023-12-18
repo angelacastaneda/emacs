@@ -26,6 +26,15 @@ camelCaseAcknowledgment
     (setq auto-save-default nil)
 #+end_src
 
+*** electric
+
+#+begin_src emacs-lisp
+  (setq electric-pair-pairs '(
+			      (?\( . ?\))
+			      (?\[ . ?\])
+			      ))
+  (electric-pair-mode t)
+#+end_src
 
 *** no bell
 
