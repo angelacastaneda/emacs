@@ -96,6 +96,8 @@ camelCaseAcknowledgment
 
 *** ido
 
+**** load ido
+
 #+begin_src emacs-lisp
   (setq ido-enable-flex-matching nil)
   (setq ido-create-new-buffer 'always)
@@ -103,7 +105,7 @@ camelCaseAcknowledgment
   (ido-mode 1)
 #+end_src
 
-add vertical
+**** add vertical
 
 #+begin_src emacs-lisp
   (use-package ido-vertical-mode
@@ -112,6 +114,8 @@ add vertical
     (ido-vertical-mode 1))
   (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 #+end_src
+
+**** set switch-buffer macro
 
 #+begin_src emacs-lisp
   (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
