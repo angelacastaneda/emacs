@@ -11,6 +11,14 @@
     (setq inhibit-startup-message t)
 #+end_src
 
+*** subword mode
+
+camelCaseAcknowledgment
+
+#+begin_src emacs-lisp
+  (global-subword-mode 1)
+#+end_src
+
 *** no autosaves or backups
 
 #+begin_src emacs-lisp
