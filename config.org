@@ -49,6 +49,16 @@
   (ido-mode 1)
 #+end_src
 
+add vertical
+
+#+begin_src emacs-lisp
+  (use-package ido-vertical-mode
+    :ensure t
+    :init
+    (ido-vertical-mode 1))
+  (setq ido-vertical-define-keys 'C-n-and-C-p-only)
+#+end_src
+
 *** smex
 
 #+begin_src emacs-lisp
