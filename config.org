@@ -59,6 +59,10 @@ add vertical
   (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 #+end_src
 
+#+begin_src emacs-lisp
+  (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
+#+end_src
+
 *** smex
 
 #+begin_src emacs-lisp
@@ -67,6 +71,12 @@ add vertical
     :init (smex-initialize)
     :bind
     ("M-x" . smex))
+#+end_src
+
+*** buffer switching
+
+#+begin_src emacs-lisp
+  (global-set-key (kbd "C-x b") 'ibuffer)
 #+end_src
 
 *** y/n instead of yes/no
