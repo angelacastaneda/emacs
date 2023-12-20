@@ -29,7 +29,7 @@ camelCaseAcknowledgment
 ** no autosaves or backups
 
 #+begin_src emacs-lisp
-    (setq make-backup-file nil)
+    (setq make-backup-files nil)
     (setq auto-save-default nil)
 #+end_src
 
