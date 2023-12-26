@@ -285,3 +285,15 @@ hides specified minor modes in status line
 #+begin_src emacs-lisp
   (setq org-log-done 'time)
 #+end_src
+
+** org-agenda dir
+
+#+begin_src emacs-lisp
+  (setq org-agenda-files '("~/org"))
+#+end_src
+
+** org-agenda binding
+
+#+begin_src emacs-lisp
+  (global-set-key (kbd "C-c a") 'org-agenda)
+#+end_src
