@@ -279,3 +279,9 @@ hides specified minor modes in status line
 #+begin_src emacs-lisp
   (setq org-src-window-setup 'current-window)
 #+end_src
+
+** Auto timestamp for DONE
+
+#+begin_src emacs-lisp
+  (setq org-log-done 'time)
+#+end_src
