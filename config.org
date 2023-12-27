@@ -233,6 +233,13 @@ hides specified minor modes in status line
     (rainbow-delimiters-mode 1))
 #+end_src
 
+** smooth scroll
+
+#+begin_src emacs-lisp
+  (setq scroll-conservatively 101)
+  (setq scroll-margin 8)
+#+end_src
+
 * terminal
 
 ** magit
