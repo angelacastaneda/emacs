@@ -1,0 +1,44 @@
+#+title:emacs config
+#+author:Ángel Castañeda
+
+* emacs config
+
+** why not vim?
+
+While I'm very satisfied with [[https://www.lunarvim.org/][lunarvim]] as an IDE and native cli git
+for VC, I kinda hate caldav and finding a frontend for my [[https://radicale.org/v3.html][radicale]]
+server.
+
+I'm learning emacs for mostly for org-agenda but I'm also exploring
+org-roam and magit.
+
+** how I got started
+
+Got a cool base config with org-babel from [[https://youtube.com/playlist?list=PLX2044Ew-UVVv31a0-Qn3dA6Sd_-NyA1n&si=FHsyEvbLXbTQHiyC][uncle dave]] and lots of
+really cool show cases from [[https://systemcrafters.net/][system crafters]]. The best channel I've
+seen with showcasing emacs features is [[https://www.youtube.com/@protesilaos/][protesilaos]].
+
+** TODOs
+
+*** org general [0/3]
+- [ ] render $\LaTeX{}$, images, syntax highlighting, tables, etc
+- [ ] make headers scale by font
+- [ ] get sr.ht hook for custom READMEs
+
+*** org-agenda [0/5]
+- [ ] custom org-agenda view
+- [ ] close/unclose dates
+- [ ] add colors and such
+- [ ] make more TODO DONE etc tags
+- [ ] add holidays
+
+*** magit [0/3]
+- [ ] figure out magit custom signatures at end
+- [ ] get used to keybindings
+- [ ] figure out how to manually change hunks like ~git add -p~ then
+  hitting ~e~
+
+*** org-roam [0/3]
+- [ ] make custom templates for books, authors, etc
+- [ ] export to html
+- [ ] have less ugly graphs generated
