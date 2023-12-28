@@ -248,6 +248,17 @@ hides specified minor modes in status line
   (setq scroll-margin 8)
 #+end_src
 
+** insert signature
+
+#+begin_src emacs-lisp
+  (defun insert-signature ()
+    "Sign with name and email"
+    (interactive)
+    (insert "Ángel Castañeda <angel@acsq.me>"))
+
+  (global-set-key (kbd "C-c s") 'insert-signature)
+#+end_src
+
 * terminal
 
 ** magit
