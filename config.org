@@ -100,41 +100,49 @@ camelCaseAcknowledgment
     (evil-collection-init))
 #+end_src
 
-** ido
+** vertico
 
-*** load ido
+better ido
 
-#+begin_src emacs-lisp
-  (setq ido-enable-flex-matching nil)
-  (setq ido-create-new-buffer 'always)
-  (setq ido-everywhere t)
-  (ido-mode 1)
-#+end_src
-
-*** add vertical
+*** load package
 
 #+begin_src emacs-lisp
-  (use-package ido-vertical-mode
+  (use-package vertico
     :ensure t
+    :custom
+    (vertico-cycle t)
     :init
-    (ido-vertical-mode 1))
-  (setq ido-vertical-define-keys 'C-n-and-C-p-only)
+    (vertico-mode))
 #+end_src
+
+*** save minibuf hist
+
+#+begin_src emacs-lisp
+  (use-package savehist
+    :init
+    (savehist-mode))
+#+end_src
+
+** marginalia
+
+for getting metadata for files and cmds with vertico
+
+#+begin_src emacs-lisp
+  (use-package marginalia
+    :after vertico
+    :ensure t
+    :custom
+    (marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
+    :init
+    (marginalia-mode))
+#+end_src
+
+** ido
 
 *** set switch-buffer macro
 
 #+begin_src emacs-lisp
   (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
-#+end_src
-
-** smex
-
-#+begin_src emacs-lisp
-  (use-package smex
-    :ensure t
-    :init (smex-initialize)
-    :bind
-    ("M-x" . smex))
 #+end_src
 
 ** buffer switching
