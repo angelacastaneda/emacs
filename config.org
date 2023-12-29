@@ -259,6 +259,13 @@ hides specified minor modes in status line
   (global-set-key (kbd "C-c s") 'insert-signature)
 #+end_src
 
+* modus themes
+
+** load theme
+#+begin_src emacs-lisp
+  (load-theme 'modus-operandi t)
+#+end_src
+
 * terminal
 
 ** magit
