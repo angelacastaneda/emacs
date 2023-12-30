@@ -266,13 +266,25 @@ hides specified minor modes in status line
   (load-theme 'modus-operandi t)
 #+end_src
 
-* terminal
+* git
 
 ** magit
 #+begin_src emacs-lisp
   (use-package magit
     :ensure t)
 #+end_src
+
+** git gutter
+
+#+begin_src emacs-lisp
+  (use-package git-gutter
+    :ensure t
+    :config
+    (global-git-gutter-mode +1)
+    (setq git-gutter:update-interval 0.02))
+#+end_src
+
+* terminal
 
 ** default zsh
 
