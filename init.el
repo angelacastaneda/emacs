@@ -17,7 +17,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(git-gutter vertico marginalia org-roam magit diminish dashboard rainbow-delimiters rainbow-mode avy ido-vertical-mode smex evil-collection evil undo-fu which-key use-package bind-key)))
+   '(git-gutter-fringe git-gutter vertico marginalia org-roam magit diminish dashboard rainbow-delimiters rainbow-mode avy ido-vertical-mode smex evil-collection evil undo-fu which-key use-package bind-key)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
