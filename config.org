@@ -229,7 +229,7 @@ hides specified minor modes in status line
   (use-package rainbow-mode
     :ensure t
     :init
-    (add-hook 'prog-mode-hook 'rainbow-mode))
+    (rainbow-mode))
 #+end_src
 
 *** for parens
