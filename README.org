@@ -40,15 +40,41 @@ seen with showcasing emacs features is [[https://www.youtube.com/@protesilaos/][
 - [ ] make more TODO DONE etc tags
 - [ ] add holidays
 
-** magit [1/5]
+** org-roam [2/4]
+- [X] learn how to make custom templates for books, authors, etc
+- [ ] export to html
+- [X] have less ugly graphs generated
+- [ ] query tags and transclude results in topic index pages
+
+** frontends to unix stuff
+
+I really wanna avoid having "vendor lockin", so my goal is to
+interface with daemons and programs that are portable outside of
+emacs.
+
+prime example is maildir/notmuch vs mu4e. I guess I'm breaking my
+rules using org mode instead of TeX or markdown, but markup languages
+are pure evil anyways.
+
+*** music/mpd [0/1]
+- [ ] setup emms
+
+*** email/notmuch+msmtp [1/2]
+- [X] notmuch
+- [ ] basic email client
+
+*** git/magit [1/5]
 - [ ] figure out magit custom signatures at end
 - [ ] get used to keybindings
 - [X] figure out how to manually edit hunks (just mark then stage)
 - [ ] figure out ~git add -f <file>~
 - [ ] learn ediff
 
-** org-roam [2/4]
-- [X] learn how to make custom templates for books, authors, etc
-- [ ] export to html
-- [X] have less ugly graphs generated
-- [ ] query tags and transclude results in topic index pages
+*** irc/? [0/1]
+- [ ] figure out an irc client
+
+*** files/dired [0/1]
+- [ ] get good at dired
+
+*** pass/password-store.el [/]
+- [ ] interface with pass
