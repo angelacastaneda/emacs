@@ -1,0 +1,11 @@
+#+category: ${title}
+#+filetags: quote
+
+* Info
+#+begin_quote
+%?
+---%^{sayer}, %^{source}
+#+end_quote
+
+* Thoughts
+%?

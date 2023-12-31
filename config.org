@@ -330,11 +330,24 @@ more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
 
 ** org-roam
 
+*** load package
+
 #+begin_src emacs-lisp
   (use-package org-roam
     :ensure t
     :custom
-    (org-roam-directory (file-truename "~/roam/"))
+    (org-roam-directory (file-truename "~/Documents/org/roam/"))
+    (org-roam-capture-templates
+     '(("d" "default" plain "%?"
+	:if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+category: ${title}\n")
+	:unnarrowed t)
+       ("Q" "quote" plain (file "~/.config/emacs/captures/roam/quotes.tmpl.org")
+	:if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+	:unnarrowed t)
+       ("b" "books" plain (file "~/.config/emacs/captures/roam/books.tmpl.org")
+	:if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+	:unnarrowed t)
+       ))
     :bind (("C-c n l" . org-roam-buffer-toggle)
 	   ("C-c n f" . org-roam-node-find)
 	   ("C-c n g" . org-roam-graph)

@@ -1,0 +1,10 @@
+#+category: ${title}
+#+filetags: book
+
+* Info
+Title: ${title}%^{subtitle}
+Author: %^{author}
+Year: %^{year}
+
+* Thoughts
+%?
