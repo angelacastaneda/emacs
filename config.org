@@ -304,6 +304,16 @@ hides specified minor modes in status line
     (ad-activate 'ansi-term)
 #+end_src
 
+* email
+
+** notmuch
+notmuch needs to be installed by the distro's package manager. See
+more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
+
+#+begin_src emacs-lisp
+  (autoload 'notmuch "notmuch" "notmuch mail" t)
+#+end_src
+
 * org stuff
 
 ** make headers scale
