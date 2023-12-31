@@ -415,3 +415,34 @@ more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
 #+begin_src emacs-lisp
   (global-set-key (kbd "C-c a") 'org-agenda)
 #+end_src
+
+*** custom org-agenda view
+from prot vid
+
+#+begin_src emacs-lisp
+  (setq org-agenda-custom-commands
+	'(
+	  (
+	   "o" "overview"
+	   ((todo "TODO"
+		  ((org-agenda-overriding-header "Important tasks\n")))
+	    (agenda ""
+		    ((org-agenda-block-separator ?*)
+		     (org-agenda-span 1)
+		     (org-deadline-warning-days 0)
+		     (org-agenda-use-time-grid t)
+		     (org-agenda-overriding-header "Daily agenda\n"))))
+	   )
+	  ))
+#+end_src
+
+*** show time grid
+
+#+begin_src emacs-lisp
+(setq org-agenda-time-grid
+       '((daily weekly today remove-match)
+        (600 800 1000 1200 1400 1600 1800 2000)
+        "......" "----------------"))
+  (setq org-log-into-drawer t)
+  ;(setq org-agenda-start-with-log-mode t)
+#+end_src
