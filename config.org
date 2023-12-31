@@ -1,5 +1,5 @@
-#+TITLE: Config written in org mode
-#+CREATOR: Ángel Castañeda
+#+title: Config written in org mode
+#+author: Ángel Castañeda
 
 * basic configs
 
@@ -52,8 +52,8 @@ camelCaseAcknowledgment
 ** show line and pretty symbols in gui mode
 
 #+begin_src emacs-lisp
-    (when window-system (global-hl-line-mode t))
-    (when window-system (global-prettify-symbols-mode t))
+  (when window-system (global-hl-line-mode t))
+  (when window-system (global-prettify-symbols-mode t))
 #+end_src
 
 ** relative line nums
@@ -219,7 +219,7 @@ hides specified minor modes in status line
   (global-set-key (kbd "C-c r") 'conf-reload)
 #+end_src
 
-** rainbows
+** rainbows🌈
 
 *** for hex codes
 
@@ -269,6 +269,7 @@ hides specified minor modes in status line
 * git
 
 ** magit
+
 #+begin_src emacs-lisp
   (use-package magit
     :ensure t)
@@ -307,6 +308,7 @@ hides specified minor modes in status line
 * email
 
 ** notmuch
+
 notmuch needs to be installed by the distro's package manager. See
 more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
 
@@ -417,6 +419,7 @@ more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
 #+end_src
 
 *** custom org-agenda view
+
 from prot vid
 
 #+begin_src emacs-lisp
