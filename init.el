@@ -25,7 +25,7 @@
      (:name "all mail" :query "*" :key "a")
      (:name "to-delete" :query "tag:deleted")))
  '(package-selected-packages
-   '(git-gutter-fringe git-gutter vertico marginalia org-roam magit diminish dashboard rainbow-delimiters rainbow-mode avy ido-vertical-mode smex evil-collection evil undo-fu which-key use-package bind-key)))
+   '(orderless git-gutter-fringe git-gutter vertico marginalia org-roam magit diminish dashboard rainbow-delimiters rainbow-mode avy ido-vertical-mode smex evil-collection evil undo-fu which-key use-package bind-key)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
