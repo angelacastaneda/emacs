@@ -414,6 +414,65 @@ more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
   (setq org-log-done 'time)
 #+end_src
 
+** sicp
+
+*** get book in info pages
+
+#+begin_src emacs-lisp
+  (use-package sicp
+    :ensure t)
+#+end_src
+
+*** racket mode
+
+#+begin_src emacs-lisp
+  (use-package racket-mode
+    :ensure t)
+#+end_src
+
+*** add to org babel
+
+#+begin_src emacs-lisp
+  (use-package ob-racket
+    :after org
+    :config
+    (add-hook 'ob-racket-pre-runtime-library-load-hook
+		#'ob-racket-raco-make-runtime-library)
+    :straight (ob-racket
+		 :type git :host github :repo "hasu/emacs-ob-racket"
+		 :files ("*.el" "*.rkt")))
+
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+     (racket . t)
+     ;;(scribble . t) ;; if Scribble support is available
+     ))
+#+end_src
+
+*** fibonacci test
+
+#+begin_src racket :lang sicp :results output
+  (define (fibonacci x)
+    ;; zero indexed with 0, 1, ... being the starting values
+    (define (fibonacci-iter a b c)
+      (if (= c 0)
+	  a
+	  (fibonacci-iter b (+ a b) (- c 1))))
+    (fibonacci-iter 0 1 x))
+
+  (fibonacci 0)
+  (fibonacci 1)
+  (fibonacci 2)
+  (fibonacci 3)
+#+end_src
+
+#+RESULTS:
+: 0
+: 1
+: 1
+: 2
+
 ** org-agenda
 
 *** org-agenda dir
