@@ -375,16 +375,6 @@ more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
     (require 'org-roam-protocol))
 #+end_src
 
-*** make node-find case insensitive
-
-#+begin_src emacs-lisp
-  (defun case-insensitive-org-roam-node-read (orig-fn &rest args)
-    (let ((completion-ignore-case t))
-      (apply orig-fn args)))
-
-  (advice-add 'org-roam-node-read :around #'case-insensitive-org-roam-node-read)
-#+end_src
-
 *** roam ui
 
 #+begin_src emacs-lisp
