@@ -152,13 +152,13 @@ for getting metadata for files and cmds with vertico
 *** set switch-buffer macro
 
 #+begin_src emacs-lisp
-  (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
+  (keymap-global-set "C-x C-b" 'ido-switch-buffer)
 #+end_src
 
 ** buffer switching
 
 #+begin_src emacs-lisp
-  (global-set-key (kbd "C-x b") 'ibuffer)
+  (keymap-global-set "C-x b" 'ibuffer)
 #+end_src
 
 *** always kill current buffer
@@ -167,7 +167,7 @@ for getting metadata for files and cmds with vertico
   (defun my/kill-curr-buff ()
     (interactive)
     (kill-buffer (current-buffer)))
-  (global-set-key (kbd "C-x k") 'my/kill-curr-buff)
+  (keymap-global-set "C-x k" 'my/kill-curr-buff)
 #+end_src
 
 ** dashboard
@@ -217,7 +217,7 @@ hides specified minor modes in status line
   (defun my/conf-edit ()
     (interactive)
     (find-file "~/.config/emacs/config.org"))
-  (global-set-key (kbd "C-c e") 'my/conf-edit)
+  (keymap-global-set "C-c e" 'my/conf-edit)
 #+end_src
 
 *** reload
@@ -226,7 +226,7 @@ hides specified minor modes in status line
   (defun my/conf-reload ()
     (interactive)
     (org-babel-load-file (expand-file-name "~/.config/emacs/config.org")))
-  (global-set-key (kbd "C-c r") 'my/conf-reload)
+  (keymap-global-set "C-c r" 'my/conf-reload)
 #+end_src
 
 ** rainbows🌈
@@ -266,7 +266,7 @@ hides specified minor modes in status line
     (interactive)
     (insert "Ángel Castañeda <angel@acsq.me>"))
 
-  (global-set-key (kbd "C-c s") 'my/insert-signature)
+  (keymap-global-set "C-c s" 'my/insert-signature)
 #+end_src
 
 * modus themes
@@ -474,7 +474,7 @@ more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
 *** org-agenda binding
 
 #+begin_src emacs-lisp
-  (global-set-key (kbd "C-c a") 'org-agenda)
+  (keymap-global-set "C-c a" 'org-agenda)
 #+end_src
 
 *** custom org-agenda view
