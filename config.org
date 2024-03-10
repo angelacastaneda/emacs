@@ -164,10 +164,10 @@ for getting metadata for files and cmds with vertico
 *** always kill current buffer
 
 #+begin_src emacs-lisp
-  (defun kill-curr-buff ()
+  (defun my/kill-curr-buff ()
     (interactive)
     (kill-buffer (current-buffer)))
-  (global-set-key (kbd "C-x k") 'kill-curr-buff)
+  (global-set-key (kbd "C-x k") 'my/kill-curr-buff)
 #+end_src
 
 ** dashboard
@@ -214,19 +214,19 @@ hides specified minor modes in status line
 *** edit
 
 #+begin_src emacs-lisp
-  (defun conf-edit ()
+  (defun my/conf-edit ()
     (interactive)
     (find-file "~/.config/emacs/config.org"))
-  (global-set-key (kbd "C-c e") 'conf-edit)
+  (global-set-key (kbd "C-c e") 'my/conf-edit)
 #+end_src
 
 *** reload
 
 #+begin_src emacs-lisp
-  (defun conf-reload ()
+  (defun my/conf-reload ()
     (interactive)
     (org-babel-load-file (expand-file-name "~/.config/emacs/config.org")))
-  (global-set-key (kbd "C-c r") 'conf-reload)
+  (global-set-key (kbd "C-c r") 'my/conf-reload)
 #+end_src
 
 ** rainbows🌈
@@ -261,12 +261,12 @@ hides specified minor modes in status line
 ** insert signature
 
 #+begin_src emacs-lisp
-  (defun insert-signature ()
+  (defun my/insert-signature ()
     "Sign with name and email"
     (interactive)
     (insert "Ángel Castañeda <angel@acsq.me>"))
 
-  (global-set-key (kbd "C-c s") 'insert-signature)
+  (global-set-key (kbd "C-c s") 'my/insert-signature)
 #+end_src
 
 * modus themes
