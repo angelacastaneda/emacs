@@ -264,7 +264,10 @@ hides specified minor modes in status line
   (defun my/insert-signature ()
     "Sign with name and email"
     (interactive)
-    (insert "Ángel Castañeda <angel@acsq.me>"))
+    (let
+	((name "Ángel Castañeda")
+	 (email "angel@acsq.me"))
+      (insert (format "%s <%s>" name email))))
 
   (keymap-global-set "C-c s" 'my/insert-signature)
 #+end_src
