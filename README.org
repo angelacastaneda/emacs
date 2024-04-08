@@ -19,11 +19,11 @@ seen with showcasing emacs features is [[https://www.youtube.com/@protesilaos/][
 
 * TODOs
 
-** org general [1/7]
-- [-] $\LaTeX{}$ previews
+** org general [2/7]
+- [X] $\LaTeX{}$ previews
   - [X] ez integral stuff
   $$\int_{-\infty}^0 e^x dx = 1$$
-  - [ ] actuarial notation package too
+  - [X] actuarial notation package too
   $$a_{\angl{n} i}$$
 - [ ] syntax highlighting
 - [ ] fancy tables

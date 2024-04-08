@@ -315,6 +315,15 @@ more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
    (set-face-attribute 'org-document-title nil :height 2.0))
 #+end_src
 
+** $\LaTeX$ Previews
+
+*** add actuarial notation
+
+#+begin_src emacs-lisp
+  (add-to-list 'org-latex-packages-alist '("" "actuarialangle"))
+  (add-to-list 'org-latex-packages-alist '("" "actuarialsymbol"))
+#+end_src
+
 ** org-roam
 
 *** load package
