@@ -317,6 +317,15 @@ more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
 
 ** $\LaTeX$ Previews
 
+*** show code when hovering over
+
+#+begin_src emacs-lisp
+  (use-package org-fragtog
+    :ensure t
+    :config
+    (add-hook 'org-mode-hook 'org-fragtog-mode))
+#+end_src
+
 *** add actuarial notation
 
 #+begin_src emacs-lisp
