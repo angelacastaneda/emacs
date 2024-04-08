@@ -244,6 +244,14 @@ hides specified minor modes in status line
   (keymap-global-set "C-c s" 'my/insert-signature)
 #+end_src
 
+** font size changer
+
+#+begin_src emacs-lisp
+  (when window-system
+    (keymap-global-set "M-K" #'text-scale-increase)
+    (keymap-global-set "M-J" #'text-scale-decrease))
+#+end_src
+
 * modus themes
 
 ** load theme
