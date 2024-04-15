@@ -20,6 +20,13 @@ camelCaseAcknowledgment
   (global-subword-mode 1)
 #+end_src
 
+** wrap at 80 char
+
+#+begin_src emacs-lisp
+  (add-hook 'text-mode-hook #'auto-fill-mode)
+  (setq-default fill-column 80)
+#+end_src
+
 ** clock
 
 #+begin_src emacs-lisp
