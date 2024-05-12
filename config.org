@@ -168,6 +168,25 @@ for getting metadata for files and cmds with vertico
     ("M-s" . avy-goto-char))
 #+end_src
 
+** devil mode
+
+#+begin_src emacs-lisp
+  (use-package devil
+    :ensure t
+    :bind ("C-," . global-devil-mode)
+    :config
+    (add-to-list 'devil-repeatable-keys '("%k m b" "%k m f" "%k m a" "%k m e" "%k m p" "%k m n"))
+    :init
+    (global-devil-mode))
+#+end_src
+
+*** make vertical movement easier
+
+#+begin_src emacs-lisp
+  (keymap-global-set "M-p" 'backward-paragraph)
+  (keymap-global-set "M-n" 'forward-paragraph)
+#+end_src
+
 ** diminish mode
 
 hides specified minor modes in status line
@@ -177,7 +196,7 @@ hides specified minor modes in status line
     :ensure t
     :init
     (diminish 'rainbow-mode)
-    (diminish 'evil-collection-unimpaired-mode)
+    (diminish 'devil-mode)
     (diminish 'which-key-mode)
     (diminish 'subword-mode))
 #+end_src
