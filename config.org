@@ -367,6 +367,12 @@ more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
   (add-to-list 'org-latex-packages-alist '("" "actuarialsymbol"))
 #+end_src
 
+** org-indent
+
+#+begin_src emacs-lisp
+  (add-hook 'org-mode-hook 'org-indent-mode)
+#+end_src
+
 ** org-roam
 
 *** load package
