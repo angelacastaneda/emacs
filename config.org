@@ -285,6 +285,12 @@ hides specified minor modes in status line
   (load-theme 'modus-operandi t)
 #+end_src
 
+** default monospace font
+
+#+begin_src emacs-lisp
+  (set-face-attribute 'default nil :font "monospace" :height 160)
+#+end_src
+
 * git
 
 ** magit
