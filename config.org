@@ -380,6 +380,43 @@ more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
   (add-hook 'org-mode-hook 'org-indent-mode)
 #+end_src
 
+** denote
+
+*** load package
+
+#+begin_src emacs-lisp
+  (use-package denote
+    :ensure t
+    :custom
+    (denote-directory (expand-file-name "~/Documents/org/denote"))
+    (denote-save-buffers nil)
+    (denote-known-keywords '("history" "math" "code"))
+    (denote-infer-keywords t)
+    (denote-sort-keywords t)
+    (denote-prompts '(title keywords))
+    :bind (("C-c d m" . denote-rename-file-using-front-matter)
+           ("C-c d f" . denote-open-or-create)
+           ("C-c d i" . denote-link-or-create)
+           ("C-c d b" . denote-backlinks)))
+#+end_src
+
+*** dired fontification
+
+#+begin_src emacs-lisp
+  (add-hook 'dired-mode-hook #'denote-dired-mode)
+#+end_src
+
+*** denote graph
+
+#+begin_src emacs-lisp
+    (use-package denote-graph
+      :ensure t
+      :straight (denote-graph
+                 :type git :host github :repo "mattyonweb/denote-graph"
+                 :files ("*.el"))
+      :bind (("C-c d g" . denote-graph-generate-dot-file)))
+#+end_src
+
 ** org-roam
 
 *** load package
