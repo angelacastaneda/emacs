@@ -3,7 +3,6 @@
 #+startup: latexpreview
 
 * why not vim?
-
 While I'm very satisfied with [[https://www.lunarvim.org/][lunarvim]] as an IDE and native cli git
 for VC, I kinda hate caldav and finding a frontend for my [[https://radicale.org/v3.html][radicale]]
 server.
@@ -12,13 +11,11 @@ I'm learning emacs for mostly for org-agenda but I'm also exploring
 org-roam and magit.
 
 * how I got started
-
 Got a cool base config with org-babel from [[https://youtube.com/playlist?list=PLX2044Ew-UVVv31a0-Qn3dA6Sd_-NyA1n&si=FHsyEvbLXbTQHiyC][uncle dave]] and lots of
 really cool show cases from [[https://systemcrafters.net/][system crafters]]. The best channel I've
 seen with showcasing emacs features is [[https://www.youtube.com/@protesilaos/][protesilaos]].
 
 * TODOs
-
 ** org general [2/7]
 - [X] $\LaTeX{}$ previews
   - [X] ez integral stuff
@@ -47,7 +44,6 @@ seen with showcasing emacs features is [[https://www.youtube.com/@protesilaos/][
 - [ ] query tags and transclude results in topic index pages
 
 ** frontends to unix stuff
-
 I really wanna avoid having "vendor lockin", so my goal is to
 interface with daemons and programs that are portable outside of
 emacs.
@@ -76,5 +72,5 @@ are pure evil anyways.
 *** files/dired [0/1]
 - [ ] get good at dired
 
-*** pass/password-store.el [/]
+*** pass/password-store.el [0/1]
 - [ ] interface with pass

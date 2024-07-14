@@ -28,12 +28,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(notmuch-saved-searches
-   '((:name "inbox" :query "tag:inbox" :key "i")
-     (:name "unread" :query "tag:unread" :key "u")
-     (:name "flagged" :query "tag:flagged" :key "f")
-     (:name "sent" :query "tag:sent" :key "t")
-     (:name "drafts" :query "tag:draft" :key "d")
-     (:name "all mail" :query "*" :key "a")
-     (:name "to-delete" :query "tag:deleted")))
+    '((:name "inbox" :query "tag:inbox" :key "i")
+       (:name "unread" :query "tag:unread" :key "u")
+       (:name "flagged" :query "tag:flagged" :key "f")
+       (:name "sent" :query "tag:sent" :key "t")
+       (:name "drafts" :query "tag:draft" :key "d")
+       (:name "all mail" :query "*" :key "a")
+       (:name "to-delete" :query "tag:deleted")))
  '(package-selected-packages
    '(racket-mode sicp orderless git-gutter-fringe git-gutter vertico marginalia org-roam magit diminish dashboard rainbow-delimiters rainbow-mode avy ido-vertical-mode smex undo-fu which-key use-package bind-key)))

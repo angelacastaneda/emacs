@@ -2,18 +2,15 @@
 #+author: Ángel Castañeda
 
 * basic configs
-
 ** unguiing
-
 #+begin_src emacs-lisp
-    (tool-bar-mode -1)
-    (menu-bar-mode -1)
-    (scroll-bar-mode -1)
-    (setq inhibit-startup-message t)
+  (tool-bar-mode -1)
+  (menu-bar-mode -1)
+  (scroll-bar-mode -1)
+  (setq inhibit-startup-message t)
 #+end_src
 
 ** subword mode
-
 camelCaseAcknowledgment
 
 #+begin_src emacs-lisp
@@ -21,72 +18,61 @@ camelCaseAcknowledgment
 #+end_src
 
 ** wrap at 80 char
-
 #+begin_src emacs-lisp
   (add-hook 'text-mode-hook #'auto-fill-mode)
   (setq-default fill-column 80)
 #+end_src
 
 ** make vimisms less painful
-
 #+begin_src emacs-lisp
   (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 #+end_src
 
 ** clock
-
 #+begin_src emacs-lisp
   (display-time-mode 1)
 #+end_src
 
 ** no autosaves or backups
-
 #+begin_src emacs-lisp
-    (setq make-backup-files nil)
-    (setq auto-save-default nil)
+  (setq make-backup-files nil)
+  (setq auto-save-default nil)
 #+end_src
 
 ** electric
-
 #+begin_src emacs-lisp
-  (setq electric-pair-pairs '(
-			      (?\( . ?\))
-			      (?\[ . ?\])
-			      ))
+  (setq electric-pair-pairs
+        '((?\( . ?\))
+          (?\[ . ?\])))
   (electric-pair-mode t)
 #+end_src
 
 ** no bell
-
 #+begin_src emacs-lisp
-    (setq ring-bell-function 'ignore)
+  (setq ring-bell-function 'ignore)
 #+end_src
 
 ** show line and pretty symbols in gui mode
-
 #+begin_src emacs-lisp
   (when window-system (global-hl-line-mode t))
   (when window-system (global-prettify-symbols-mode t))
 #+end_src
 
 ** relative line nums
-
 #+begin_src emacs-lisp
-    (setq display-line-numbers-type 'relative)
-    (global-display-line-numbers-mode)
+  (setq display-line-numbers-type 'relative)
+  (global-display-line-numbers-mode)
 #+end_src
 
 ** which-key
-
 #+begin_src emacs-lisp
-    (use-package which-key
-	:ensure t
-	:init
-	(which-key-mode))
+  (use-package which-key
+    :ensure t
+    :init
+    (which-key-mode))
 #+end_src
 
 ** orderless search
-
 #+begin_src emacs-lisp
   (use-package orderless
     :ensure t
@@ -96,11 +82,9 @@ camelCaseAcknowledgment
 #+end_src
 
 ** vertico
-
 better ido
 
 *** load package
-
 #+begin_src emacs-lisp
   (use-package vertico
     :ensure t
@@ -119,7 +103,6 @@ better ido
 #+end_src
 
 ** marginalia
-
 for getting metadata for files and cmds with vertico
 
 #+begin_src emacs-lisp
@@ -133,21 +116,17 @@ for getting metadata for files and cmds with vertico
 #+end_src
 
 ** ido
-
 *** set switch-buffer macro
-
 #+begin_src emacs-lisp
   (keymap-global-set "C-x C-b" 'ido-switch-buffer)
 #+end_src
 
 ** buffer switching
-
 #+begin_src emacs-lisp
   (keymap-global-set "C-x b" 'ibuffer)
 #+end_src
 
 *** always kill current buffer
-
 #+begin_src emacs-lisp
   (defun my/kill-curr-buff ()
     (interactive)
@@ -156,7 +135,6 @@ for getting metadata for files and cmds with vertico
 #+end_src
 
 ** dashboard
-
 #+begin_src emacs-lisp
   (use-package dashboard
     :ensure t
@@ -166,7 +144,6 @@ for getting metadata for files and cmds with vertico
 #+end_src
 
 ** avy
-
 #+begin_src emacs-lisp
   (use-package avy
     :ensure t
@@ -175,7 +152,6 @@ for getting metadata for files and cmds with vertico
 #+end_src
 
 ** devil mode
-
 #+begin_src emacs-lisp
   (use-package devil
     :ensure t
@@ -187,14 +163,12 @@ for getting metadata for files and cmds with vertico
 #+end_src
 
 *** make vertical movement easier
-
 #+begin_src emacs-lisp
   (keymap-global-set "M-p" 'backward-paragraph)
   (keymap-global-set "M-n" 'forward-paragraph)
 #+end_src
 
 ** diminish mode
-
 hides specified minor modes in status line
 
 #+begin_src emacs-lisp
@@ -208,15 +182,12 @@ hides specified minor modes in status line
 #+end_src
 
 ** y/n instead of yes/no
-
 #+begin_src emacs-lisp
-    (defalias 'yes-or-no-p 'y-or-n-p)
+  (defalias 'yes-or-no-p 'y-or-n-p)
 #+end_src
 
 ** conf edit/reload
-
 *** edit
-
 #+begin_src emacs-lisp
   (defun my/conf-edit ()
     (interactive)
@@ -225,7 +196,6 @@ hides specified minor modes in status line
 #+end_src
 
 *** reload
-
 #+begin_src emacs-lisp
   (defun my/conf-reload ()
     (interactive)
@@ -234,9 +204,7 @@ hides specified minor modes in status line
 #+end_src
 
 ** rainbows🌈
-
 *** for hex codes
-
 #005F87
 
 #+begin_src emacs-lisp
@@ -247,7 +215,6 @@ hides specified minor modes in status line
 #+end_src
 
 *** for parens
-
 #+begin_src emacs-lisp
   (use-package rainbow-delimiters
     :ensure t
@@ -256,28 +223,25 @@ hides specified minor modes in status line
 #+end_src
 
 ** smooth scroll
-
 #+begin_src emacs-lisp
   (setq scroll-conservatively 101)
   (setq scroll-margin 8)
 #+end_src
 
 ** insert signature
-
 #+begin_src emacs-lisp
   (defun my/insert-signature ()
     "Sign with name and email"
     (interactive)
     (let
-	((name "Ángel Castañeda")
-	 (email "angel@acsq.me"))
+        ((name "Ángel Castañeda")
+         (email "angel@acsq.me"))
       (insert (format "%s <%s>" name email))))
 
   (keymap-global-set "C-c s" 'my/insert-signature)
 #+end_src
 
 ** font size changer
-
 #+begin_src emacs-lisp
   (when window-system
     (keymap-global-set "M-K" #'text-scale-increase)
@@ -285,29 +249,24 @@ hides specified minor modes in status line
 #+end_src
 
 * modus themes
-
 ** load theme
 #+begin_src emacs-lisp
   (load-theme 'modus-operandi t)
 #+end_src
 
 ** default monospace font
-
 #+begin_src emacs-lisp
   (set-face-attribute 'default nil :font "monospace" :height 160)
 #+end_src
 
 * git
-
 ** magit
-
 #+begin_src emacs-lisp
   (use-package magit
     :ensure t)
 #+end_src
 
 ** git gutter
-
 #+begin_src emacs-lisp
   (use-package git-gutter
     :ensure t
@@ -326,9 +285,7 @@ hides specified minor modes in status line
 #+end_src
 
 * terminal
-
 ** default zsh
-
 #+begin_src emacs-lisp
     (defvar my-terminal-shell "/usr/bin/zsh")
     (defadvice ansi-term (before force-bash)
@@ -337,9 +294,7 @@ hides specified minor modes in status line
 #+end_src
 
 * email
-
 ** notmuch
-
 notmuch needs to be installed by the distro's package manager. See
 more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
 
@@ -348,18 +303,14 @@ more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
 #+end_src
 
 * org stuff
-
 ** make title scale
-
 #+begin_src emacs-lisp
   (custom-set-faces
    (set-face-attribute 'org-document-title nil :height 2.0))
 #+end_src
 
 ** $\LaTeX$ Previews
-
 *** show code when hovering over
-
 #+begin_src emacs-lisp
   (use-package org-fragtog
     :ensure t
@@ -368,22 +319,18 @@ more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
 #+end_src
 
 *** add actuarial notation
-
 #+begin_src emacs-lisp
   (add-to-list 'org-latex-packages-alist '("" "actuarialangle"))
   (add-to-list 'org-latex-packages-alist '("" "actuarialsymbol"))
 #+end_src
 
 ** org-indent
-
 #+begin_src emacs-lisp
   (add-hook 'org-mode-hook 'org-indent-mode)
 #+end_src
 
 ** denote
-
 *** load package
-
 #+begin_src emacs-lisp
   (use-package denote
     :ensure t
@@ -401,13 +348,11 @@ more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
 #+end_src
 
 *** dired fontification
-
 #+begin_src emacs-lisp
   (add-hook 'dired-mode-hook #'denote-dired-mode)
 #+end_src
 
 *** denote graph
-
 #+begin_src emacs-lisp
     (use-package denote-graph
       :ensure t
@@ -418,9 +363,7 @@ more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
 #+end_src
 
 ** org-roam
-
 *** load package
-
 #+begin_src emacs-lisp
   (use-package org-roam
     :ensure t
@@ -453,7 +396,6 @@ more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
 #+end_src
 
 *** roam ui
-
 #+begin_src emacs-lisp
   (use-package org-roam-ui
     :ensure t
@@ -470,35 +412,29 @@ more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
 #+end_src
 
 ** code swallow buffer
-
 #+begin_src emacs-lisp
   (setq org-src-window-setup 'current-window)
 #+end_src
 
 ** Auto timestamp for DONE
-
 #+begin_src emacs-lisp
   (setq org-log-done 'time)
 #+end_src
 
 ** sicp
-
 *** get book in info pages
-
 #+begin_src emacs-lisp
   (use-package sicp
     :ensure t)
 #+end_src
 
 *** racket mode
-
 #+begin_src emacs-lisp
   (use-package racket-mode
     :ensure t)
 #+end_src
 
 *** add to org babel
-
 #+begin_src emacs-lisp
   (use-package ob-racket
     :after org
@@ -518,7 +454,6 @@ more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
 #+end_src
 
 *** fibonacci test
-
 #+begin_src racket :lang sicp :results output
   (define (fibonacci x)
     ;; zero indexed with 0, 1, ... being the starting values
@@ -541,21 +476,17 @@ more in the [[https://notmuchmail.org/notmuch-emacs/#index2h2][notmuch wiki]].
 : 2
 
 ** org-agenda
-
 *** org-agenda dir
-
 #+begin_src emacs-lisp
   (setq org-agenda-files (directory-files-recursively "~/Documents/org/" "\\.org$"))
 #+end_src
 
 *** org-agenda binding
-
 #+begin_src emacs-lisp
   (keymap-global-set "C-c a" 'org-agenda)
 #+end_src
 
 *** custom org-agenda view
-
 from prot vid
 
 #+begin_src emacs-lisp
@@ -576,7 +507,6 @@ from prot vid
 #+end_src
 
 *** show time grid
-
 #+begin_src emacs-lisp
 (setq org-agenda-time-grid
        '((daily weekly today remove-match)
