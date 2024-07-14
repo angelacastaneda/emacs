@@ -248,15 +248,31 @@ hides specified minor modes in status line
     (keymap-global-set "M-J" #'text-scale-decrease))
 #+end_src
 
-* modus themes
-** load theme
+* Theme
+** Load Theme
 #+begin_src emacs-lisp
-  (load-theme 'modus-operandi t)
+  (use-package ef-themes
+    :ensure t
+    :custom
+    (ef-themes-mixed-fonts t)
+    :hook
+    (text-mode . variable-pitch-mode))
+  (load-theme 'ef-dream t)
 #+end_src
 
 ** default monospace font
 #+begin_src emacs-lisp
-  (set-face-attribute 'default nil :font "monospace" :height 160)
+  (set-face-attribute 'default nil
+                      :family "ComicShannsMono Nerd Font Mono"
+                      :height 150)
+
+  (set-face-attribute 'variable-pitch nil
+                      :family "Noto Sans"
+                      :height 150)
+
+  (set-face-attribute 'fixed-pitch nil
+                      :family "ComicShannsMono Nerd Font Mono"
+                      :height 150)
 #+end_src
 
 * git
